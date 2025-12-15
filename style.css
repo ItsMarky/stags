@@ -1,0 +1,88 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --secondary-bg: #2a2a2a;
+    --text-color-primary: #f0f0f0; 
+    --text-color-secondary: #9ca3af; 
+    --accent-gold: #c0a068;
+    --border-color: #444444;
+    --shadow-color: rgba(192, 160, 104, 0.4);
+}
+
+.bg-barber-dark { 
+    background-color: var(--primary-bg); 
+} 
+.text-barber-gold { 
+    color: var(--accent-gold); 
+} 
+.border-barber-gold { 
+    border-color: var(--accent-gold); 
+}
+
+.text-gray-200 { 
+    color: var(--text-color-primary);
+}
+.text-gray-400, .text-gray-500 { 
+    color: var(--text-color-secondary);
+}
+
+.bg-gray-900 {
+    background-color: var(--secondary-bg);
+}
+
+.nav-link { 
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-gold);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.pricing-row {
+    border-bottom: 1px dashed var(--border-color);
+    transition: background-color 0.2s ease;
+    background-color: var(--primary-bg);
+}
+.pricing-row:hover {
+    background-color: var(--secondary-bg);
+}
+
+.barber-profile-container {
+    border-radius: 50%;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 0 15px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+.barber-profile-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+.barber-profile-container img {
+    border-radius: 50%; 
+}
+
+.cta-pulse-gold {
+    animation: pulse-glow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+    font-weight: 800;
+    box-shadow: 0 4px 15px var(--accent-gold);
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 0 0px var(--accent-gold);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(192, 160, 104, 0);
+    }
+}
